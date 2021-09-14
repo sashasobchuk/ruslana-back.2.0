@@ -1,0 +1,30 @@
+RewriteEngine on
+
+
+#дозволяєм прямий доступ до файлів
+RewriteRule ^(files) - [L]
+
+
+RewriteRule .* index.php?querysystemurl=$0 [QSA,L]
+
+# забороняє лістинг   всім крім індекс
+Options -Indexes
+
+
+
+# закриває прямий дост  уп
+<FilesMatch "^\.(php)$">
+	Deny from all
+</FilesMatch>
+
+# дозволяєм індексу(точці входу)
+<FilesMatch "^index.(php)$">
+	Allow from all
+</FilesMatch>
+
+
+php_value upload_max_filesize 100M
+php_value post_max_size 100M
+
+
+
