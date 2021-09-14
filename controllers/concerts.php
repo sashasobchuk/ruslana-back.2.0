@@ -32,12 +32,12 @@ class Concerts
     }
     public static function deleteItem()
     {
+
         $isAdmin = checkOnAdmin();
         if($isAdmin ==false) {die('not admin');}else
 
-
         $id = trim(htmlspecialchars($_GET['id']));
-        $existing = get_item_concert(2);
+        $existing = get_item_concert($id);
         if ($existing === false) {
             /** перевірка чи вже існує*/
             http_response_code(400);

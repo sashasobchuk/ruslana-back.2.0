@@ -49,12 +49,8 @@ class Helps
 function checkOnAdmin():bool
 {
     if(USER['role']=="ADMIN"){
-//        var_dump(USER);
-//        die(1);
         return true;
     }else{
-//        var_dump(USER);
-//        die(2);
         /** преревірка на адміністратора*/
         return false;
         /*            die('here flase not admin');

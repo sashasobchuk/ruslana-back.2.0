@@ -1,6 +1,5 @@
 <?php
 
-
 use Firebase\JWT\JWT;
 
 class Auth
@@ -83,34 +82,6 @@ class Auth
             'role' => $role
         ]);
     }
-//    public static function authorization()
-//    {
-//        $token = trim(htmlspecialchars($_POST['token']));
-//
-//        if ($token === '' && $token === null) {
-//            http_response_code(400);
-//            die('empty token');
-//        }
-//        $data = JWT::decode($token, SECRET_KEY_FOR_JVT, array('HS256'))->data;
-//        $login = $data->login;
-//        $password = $data->password;
-//        $role = $data->role;
-//
-//        $arr = self:: helpFunc($login,$password);
-//        $jwtToken=$arr['jwtToken'];
-//        $user=$arr['user'];
-//
-//
-//        die(json_encode([
-//            'success' => true,
-//            'token' => $jwtToken,
-//            'login' => $login,
-//            'role' => $role
-//        ]));
-//    }
-
-
-
 
     private  static function helpFunc($login,$password){
         /** hash +  + checkPassword maketoken = makeJWT */

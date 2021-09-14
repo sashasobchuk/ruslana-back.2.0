@@ -15,6 +15,9 @@ define("USER", Auth::authtentication());;
 
 $response = include_once ("routers/$query_routes[0].php");
 
+
+
+//http_response_code(400);
 die('next end here 404ddadvx');
 
 

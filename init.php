@@ -35,13 +35,14 @@ include_once('./controllers/youtube.php');
 
 
 
+include_once(__DIR__.'/vendor/autoload.php');
 
+include_once ('./vendor/firebase/php-jwt/src/BeforeValidException.php');
+include_once ('./vendor/firebase/php-jwt/src/ExpiredException.php');
+include_once ('./vendor/firebase/php-jwt/src/SignatureInvalidException.php');
+include_once ('./vendor/firebase/php-jwt/src/JWT.php');
 
 /** initing JWT*/
-include_once './libs/php-jwt/src/BeforeValidException.php';
-include_once './libs/php-jwt/src/ExpiredException.php';
-include_once './libs/php-jwt/src/SignatureInvalidException.php';
-include_once './libs/php-jwt/src/JWT.php';
 
 
 
