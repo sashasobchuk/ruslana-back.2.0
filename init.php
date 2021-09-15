@@ -10,8 +10,8 @@ const DB_HOST = "localhost";
 const USER_NAME = 'root';
 const DB_PASSWORD = '';
 const DB_NAME = 'rusya';
-//const HOST = 'http://localhost/server_rusya/back/';
-const HOST = 'https://ruslana-server.herokuapp.com/';
+const HOST = 'http://localhost/server_rusya/back/';
+//const HOST = 'https://ruslana-server.herokuapp.com/';
 $secretKey = '111';
 const SECRET_KEY_FOR_JVT = 'fdksdfkfisадfldskfjQPWEOdkfjlsdfk3034fj34';
 
