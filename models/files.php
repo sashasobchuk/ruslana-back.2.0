@@ -136,7 +136,6 @@ class FilesModels{
     public static function get_filesAll(string $fileType,string $sortType='DESC ',$start = 1,$limit =10)
     {
         $sql = 'SELECT * FROM  `file` WHERE fileType=:fileType ORDER BY addDate  ' . $sortType . ' LIMIT ' . $start .' , ' . $limit ;
-//        die($sql);
         $query = getDbQuery($sql,['fileType'=>$fileType]);
         $response = $query->fetchAll();
         return $response;
