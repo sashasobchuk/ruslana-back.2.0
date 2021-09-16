@@ -14,8 +14,6 @@ class Files
         $sortType = takeSortType();
 
         $allFile = FilesModels::get_filesAll($fileType,$sortType,$start,$limit);
-//        var_dump($allFile);
-//        die();
         $totalCount = FilesModels::get_totalCoutn($fileType);
         foreach ($allFile as $item) {
             if (!file_exists('./files/files/' . $item['name'] . '.' . $item['extension'])) {
@@ -56,9 +54,12 @@ class Files
     }
     public static function setOneFile()
     {
+
         $error = null;
-        $isAdmin = checkOnAdmin();
+        $isAdmin = Helps::checkOnAdmin();
         if($isAdmin ==false) {die('not admin');}else
+
+
 
             $file = $_FILES['file'];
         $tittle = $_POST['tittle'];
@@ -180,12 +181,12 @@ class Files
     }
 
 
-    private function delete_file_private($id_file)
+    private static function delete_file_private($id_file)
     {
         deleteFileItem($id_file);
     }
 
-    private function getFileItem($idFoto)
+    private static function getFileItem($idFoto)
     {
         return get_oneFileItem($idFoto);
     }

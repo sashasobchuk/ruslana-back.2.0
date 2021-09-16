@@ -10,7 +10,7 @@ $url = $_GET['querysystemurl'] ;
 $query_routes =parseUrl($url);
 $query_params = parseParams($fullUri);
 
-define("USER", Auth::authtentication());;
+define("USER", Auth::authtentication());
 
 
 $response = include_once ("routers/$query_routes[0].php");

@@ -5,7 +5,7 @@
 use Firebase\JWT\JWT;
 
 
-const BASE_URL = '/server_rusya/back/';
+//const BASE_URL = '/server_rusya/back/';
 const DB_HOST = "localhost";
 const USER_NAME = 'root';
 const DB_PASSWORD = '';

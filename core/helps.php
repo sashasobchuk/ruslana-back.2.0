@@ -5,9 +5,11 @@ class Helps
 {
     public static function checkOnAdmin()
     {
-        if(USER['role']=="ADMIN"){
-            var_dump(USER);
-            die();
+
+
+        if(USER['role']==="ADMIN"){
+//            var_dump(USER);
+//            die();
             return true;
         }else{
             /** преревірка на адміністратора*/

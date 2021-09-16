@@ -33,6 +33,7 @@ class Auth
         $password = trim(htmlspecialchars($_POST['password']));
 
         $arr = self:: helpFunc($login,$password);
+
         $jwtToken=$arr['jwtToken'];
         $user=$arr['user'];
 
@@ -45,7 +46,9 @@ class Auth
 
     public static function authtentication()
     {
+
         $headers = getallheaders();
+
         if(!(array_key_exists('token',$headers ))) {
             return( ['success' => false,
             'token' => null,
@@ -64,12 +67,14 @@ class Auth
             http_response_code(400);
             die('empty token');
         }
+
         $data = JWT::decode($token, SECRET_KEY_FOR_JVT, array('HS256'))->data;
         $login = $data->login;
         $password = $data->password;
         $role = $data->role;
 
         $arr = self:: helpFunc($login,$password);
+
         $jwtToken=$arr['jwtToken'];
         $user=$arr['user'];
 
@@ -86,19 +91,25 @@ class Auth
     private  static function helpFunc($login,$password){
         /** hash +  + checkPassword maketoken = makeJWT */
 
+
         $bdHashPassword = takePassword($login)['password'];
+//        die($bdHashPassword);
+
         if(!(password_verify($password,$bdHashPassword))){
             /** перевірка чи пароль підходить*/
             die( json_encode(['err'=>true,'errors'=>[0=>'password and login isnt tru 3ffs0dm']]));
         }
         $user = auth($login);
 
+
+
         if ($user) {
-            http_response_code(200);
+//            http_response_code(200);
         } else {
             http_response_code(400);
             die(json_encode(['success' => 'user is not found', 'user' => $user]));
         }
+//        die($user['role']);
         $token = array(
             "data" => array(
                 "login" => $login,
